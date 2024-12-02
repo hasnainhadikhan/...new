@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculater</title>
+</head>
+<style>
+body{
+   /* background-color: black; */
+   /* background: rgb(90,0,120); */
+   background-color: #555;
+   font-family: "Rubik", serif;
+   overflow-x: hidden;
+/* background: linear-gradient(90deg, rgba(90,0,120,1) 0%, rgba(36,0,121,1) 100%); */
+}
+.mein{
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   height: 100vh;
+}
+.calculator{
+   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   background-color: #000;
+   padding: 25px 20px;
+   margin: 10px;
+   border-radius: 10px;
+}
+.calculator-1{
+   margin-bottom: 10px;
+}
+.calculator-1 input{
+   color: black;
+   border: 1px solid aliceblue;
+   text-align: right;
+   background-color: #888;
+   padding: 5px;
+   font-size: 35px;
+   height: 50px;
+   width: 265px;
+   cursor: pointer;
+   border-radius: 10px;
+   font-weight: bold;
+}
+.calculator-1 input:hover{
+   background-color: #777;
+   transform: scale(1.0);
+   transition: 0.2s;
+}
+.calculator-1 input::placeholder{
+   color: black;
+}
+.calculator-2{
+   justify-content: center;
+   flex-direction: column;
+   align-items: center;
+}
+.btn1{
+    color: rgb(141, 3, 3);
+}
+.calculator-2 .btn1:focus{
+   background-color: rgb(175, 2, 2);
+   color: aliceblue;
+}
+.calculator-2 button:hover{
+   transition: 0.5s;
+   transform: scale(1.0);
+   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+.calculator-2 button:focus{
+   color: aliceblue;
+   background-color: rgb(78, 82, 92);
+
+}
+.calculator-2 button{
+   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+   text-align: center;
+   margin: 3px;
+   text-align: center;
+   font-size: 30px;
+   width: 60px;
+   height: 60px;
+   border-radius: 10px;
+   border: none;
+   font-weight: bold;
+   background-color: #999;
+}
+/* @media(max-width: 390px){
+   .calculator-2 button{
+      width: 65px;
+      height: 65px;
+      font-size: 30px;
+   }
+   .calculator-1 input{
+      width: 280px;
+   }
+   #history{
+      width: 190px;
+   }
+}
+@media(max-width: 300px){
+   .calculator-2 button{
+      width: 50px;
+      height: 50px;
+      font-size: 25px;
+   }
+   .calculator-1 input{
+      width: 220px;
+      height: 50px;
+   }
+   .calculator{
+      padding: 20px 10px;
+   }
+} */
+   /* .icon{
+      margin: 0px;
+   } */
+/* @media(max-width: 390px){
+   .calculator-2 button{
+      width: 65px;
+      height: 65px;
+      font-size: 30px;
+   }
+   .calculator-1 input{
+      width: 280px;
+   }
+   #history{
+      width: 190px;
+   }
+}
+@media(max-width: 300px){
+   .calculator-2 button{
+      width: 50px;
+      height: 50px;
+      font-size: 25px;
+   }
+   .calculator-1 input{
+      width: 220px;
+      height: 50px;
+   }
+   .calculator{
+      padding: 20px 10px;
+   }
+} */
+   /* .icon{
+      margin: 0px;
+   } */
+/* @media(max-width: 390px){
+   .calculator-2 button{
+      width: 65px;
+      height: 65px;
+      font-size: 30px;
+   }
+   .calculator-1 input{
+      width: 280px;
+   }
+   #history{
+      width: 190px;
+   }
+}
+@media(max-width: 300px){
+   .calculator-2 button{
+      width: 50px;
+      height: 50px;
+      font-size: 25px;
+   }
+   .calculator-1 input{
+      width: 220px;
+      height: 50px;
+   }
+   .calculator{
+      padding: 20px 10px;
+   }
+} */
+   /* .icon{
+      margin: 0px;
+   } */
+
+.history{
+   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+   background-color: black;
+   color: #fff;
+   height: 550px;
+   width: 350px;
+   border-radius: 10px;
+   display: none;
+   transition: 0.5s;
+}
+.historys{
+   padding: 10px 25px;
+}
+.historys h1 {
+   text-align: center;
+}
+.ps{
+   /* height: 100px; */
+   height: 380px;
+   /* height: 60vh; */
+   overflow-y: scroll;
+   padding: 0px 15px;
+}
+.ps::-webkit-scrollbar{
+   width: 10px;
+   height: 10px;
+   /* background-color: transparent; */
+}
+.ps::-webkit-scrollbar-thumb{
+   border-radius: 10px;
+   background-color: aliceblue;
+}
+.ps p{
+   font-size: 30px;
+}
+/* .active .history{
+   top: calc(100% - 680px);
+} */
+.icon{
+   color: aliceblue;
+   position: relative;
+   left: 140px;
+   bottom: 10px;
+   /* margin: 10px; */
+   /* top: 0px; */
+   width: 20px;
+}
+.p1{
+   border-bottom: 2px solid #999;
+}
+</style>
+<body>
+    <div class="mein">
+        <div id="history1" class="history">
+           <div class="historys">
+              <div style="display: flex; justify-content: space-between; align-items: center; padding-top: 20px;" class="clr">
+                 <div class="del">
+                    <i id="trash"  class="fa-solid fa-trash"></i>
+                 </div>
+                 <div class="xmark">
+                    <i id="del" class="fa-solid fa-xmark"></i>
+                 </div>
+              </div>
+              <h1>History</h1>
+              <div class="ps"></div>
+           </div>
+        </div>
+        <div id="calculator" class="calculator">
+           <div class="icon">
+              <i id="icon" style="font-size: 20px;" class="fa-solid fa-clock-rotate-left"></i>
+           </div>
+           <div class="calculator-1">
+              <input type="text" name="" id="input" disabled>
+           </div>
+           <div class="calculator-2">
+              <button class="btn1" onclick="deletNum()"> <span>C</span> </button>
+              <button class="btn1" onclick="clearAll()"> <span>AC</span></button>
+              <button class="btn1" onclick="btn('%')"> <span>%</span> </button>
+              <button class="btn1" onclick="btn('/')"> <span>/</span></button><br>
+              <button onclick="btn('7')">7</button>
+              <button onclick="btn('8')">8</button>
+              <button onclick="btn('9')">9</button>
+              <button class="btn1" onclick="btn('*')"> <span>X</span> </button><br>
+              <button onclick="btn(4)">4</button>
+              <button onclick="btn(5)">5</button>
+              <button onclick="btn(6)">6</button>
+              <button class="btn1" onclick="btn('-')"> <span>-</span> </button><br>
+              <button onclick="btn(1)">1</button>
+              <button onclick="btn(2)">2</button>
+              <button onclick="btn(3)">3</button>
+              <button class="btn1" onclick="btn('+')"><span>+</span></button><br>
+              <button onclick="btn('00')">00</button>
+              <button onclick="btn(0)">0</button>
+              <button onclick="btn('.')">.</button>
+              <button class="btn1" onclick="solve()"><span>=</span></button>
+           </div>
+        </div>
+    <script src="app.js"> </script>
+</body>
+</html>
